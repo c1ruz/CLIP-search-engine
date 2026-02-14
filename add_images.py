@@ -7,7 +7,7 @@ from tqdm import tqdm
 import os
 import pillow_heif
 
-db_path=r"C:\Users\leona\OneDrive\Desktop\progetto\chromadb_ViT-H-14" #add your db path here
+db_path=r"YOUR_DB_PATH" #add your db path here
 
 # Initialize Chroma DB client, embedding function, and data loader
 client = chromadb.PersistentClient(path=db_path)
@@ -34,7 +34,7 @@ def add_images_to_collection(folder_path):
         except Exception as e:
             print(f"Error processing {image_path}: {e}")
 
-image_folder_path=r"C:\Users\leona\OneDrive\Desktop\progetto\images_for_indexing\docs" #add your folder path here
+image_folder_path=r"YOUR_IMAGE_FOLDER" #add your folder path here
 
 add_images_to_collection(image_folder_path)
 
