@@ -4,7 +4,7 @@ from chromadb.utils.embedding_functions import OpenCLIPEmbeddingFunction
 from chromadb.utils.data_loaders import ImageLoader
 import os
 
-db_path=r"C:\Users\leona\OneDrive\Desktop\progetto\chromadb_modellobase" #add your db path here
+db_path=r"YOUR_DB_PATH" #add your db path here
 
 # Initialize Chroma DB client, embedding function, and data loader
 client = chromadb.PersistentClient(path=db_path)
@@ -18,7 +18,7 @@ collection = client.get_or_create_collection(
 )
 
 # Display the banner image
-banner_image_path = r"C:\Users\leona\OneDrive\Desktop\progetto\images_for_indexing\docs\image-149.jpg"  # Update with the path to your banner image
+banner_image_path = r"YOUR_BANNER_PATH"  # Update with the path to your banner image
 st.image(banner_image_path)
 
 
@@ -30,7 +30,7 @@ st.write("Number of elements in the collection:", collection.count())
 
 # Search bar
 query = st.text_input("Enter your search query: ")
-parent_path = r"C:\Users\leona\OneDrive\Desktop\progetto\images_for_indexing\docs" #add your image folder path here
+parent_path = r"YOUR_IMAGE_FOLDER" #add your image folder path here
 if st.button("Search"):
     results = collection.query(query_texts=[query], n_results=5,include=["distances"])
     print(results)
